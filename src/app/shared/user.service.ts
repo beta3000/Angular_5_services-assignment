@@ -13,14 +13,12 @@ export class UserService {
     this.contador++;
     this.inactiveUsers.push(this.activeUsers[id]);
     this.activeUsers.splice(id, 1);
-    console.log('contador: ' + this.contador);
   }
 
   onSetToActive(id: number) {
     this.contador++;
     this.activeUsers.push(this.inactiveUsers[id]);
     this.inactiveUsers.splice(id, 1);
-    console.log('contador: ' + this.contador);
   }
 
 }

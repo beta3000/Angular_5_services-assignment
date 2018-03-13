@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Inject, Injectable, Input, Output} from '@angular/core';
 import {UserService} from '../shared/user.service';
+import {CounterService} from '../shared/counter.service';
 
 @Component({
   selector: 'app-inactive-users',
@@ -10,11 +11,12 @@ import {UserService} from '../shared/user.service';
 export class InactiveUsersComponent {
   users: string[];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private counterService: CounterService) {
     this.users = this.userService.inactiveUsers;
   }
 
   onSetToActive(id: number) {
     this.userService.onSetToActive(id);
+    this.counterService.adicionarContador();
   }
 }
