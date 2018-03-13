@@ -10,6 +10,7 @@ import {CounterService} from '../shared/counter.service';
 @Injectable()
 export class ActiveUsersComponent {
   users: string[];
+
   constructor(private userService: UserService, private counterService: CounterService) {
     this.users = this.userService.activeUsers;
   }
