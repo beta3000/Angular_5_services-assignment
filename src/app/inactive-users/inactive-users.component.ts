@@ -17,6 +17,6 @@ export class InactiveUsersComponent {
 
   onSetToActive(id: number) {
     this.userService.onSetToActive(id);
-    this.counterService.adicionarContador();
+    this.counterService.plusCounter();
   }
 }
